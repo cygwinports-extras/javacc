@@ -1,0 +1,35 @@
+inherit java
+
+DESCRIPTION="Java Parser Generator"
+HOMEPAGE="https://javacc.dev.java.net/"
+SRC_URI="https://javacc.dev.java.net/files/documents/17/26776/${P}.tar.gz"
+
+myprogs="javacc jjdoc jjtree"
+
+src_compile() {
+	lndirs
+#	cd ${B}/bin
+#	for prog in ${myprogs}
+#	do
+#		verbose ${GCJ} ${GCJFLAGS} --main=${prog} -o ${prog}-gcj.exe lib/javacc.jar
+#	done
+}
+
+src_test() {
+	cd ${B}/examples
+	for jj in $(find . -name '*.jj')
+	do
+		${JAVA} -classpath ${B}/bin/lib/javacc.jar javacc ${jj}
+	done
+}
+
+src_install() {
+	cd ${B}/bin
+	dojar lib/javacc.jar
+
+	for prog in ${myprogs}
+	do
+		java_wrapper ${prog} "-classpath ${JAVA_DIR}/javacc.jar ${prog}"
+#		dobin ${prog}-gcj.exe
+	done
+}

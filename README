@@ -1,0 +1,59 @@
+javacc
+------------------------------------------
+Java Compiler Compiler is a popular parser generator for use with Java 
+applications. A parser generator is a tool that reads a grammar 
+specification and converts it to a Java program that can recognize 
+matches to the grammar. In addition to the parser generator itself, 
+JavaCC provides other standard capabilities related to parser generation 
+such as tree building (via a tool called JJTree included with JavaCC), 
+actions, debugging, etc.
+
+Runtime requirements:
+  classpath-0.93-1
+  jamvm-1.4.5-1
+
+Build requirements:
+  cygwin-1.5.24-2
+  cygport-0.3.1-1
+  classpath-0.93-1
+  fastjar-0.94-1
+  jamvm-1.4.5-1
+  jikes-1.22-1
+
+Canonical website:
+  https://javacc.dev.java.net/
+
+-------------------------------------------
+
+Build instructions:
+  unpack javacc-4.0-X-src.tar.bz2
+    if you use setup to install this src package, it will be
+	 unpacked under /usr/src automatically
+  cd /usr/src
+  cygport ./javacc-4.0-X.cygport all
+
+This will create:
+  /usr/src/javacc-4.0-X-src.tar.bz2
+  /usr/src/javacc-4.0-X.tar.bz2
+
+-------------------------------------------
+
+Files included in the binary package:
+
+  /usr/bin/javacc
+  /usr/bin/jjdoc
+  /usr/bin/jjtree
+  /usr/share/doc/Cygwin/javacc-4.0.README
+  /usr/share/doc/javacc-4.0/LICENSE
+  /usr/share/java/javacc.jar
+
+------------------
+
+Port Notes:
+
+----- version 4.0-1 -----
+Initial release for Cygwin.
+
+
+Cygwin port maintained by:
+http://cygwinports.dotsrc.org/
