@@ -1,5 +1,5 @@
 category: Java
-requires: classpath jamvm
+requires: jamvm
 sdesc: "Java Parser Generator"
 ldesc: "Java Compiler Compiler is a popular parser generator for use 
 with Java applications. A parser generator is a tool that reads a 

@@ -1,0 +1,18 @@
+inherit ant
+
+DESCRIPTION="Java Parser Generator"
+HOMEPAGE="https://javacc.dev.java.net/"
+SRC_URI="https://javacc.dev.java.net/files/documents/17/142527/${P}src.tar.gz"
+SRC_DIR=${PN}
+
+ANT_BUILD_TARGETS="jar"
+
+src_install() {
+	cd ${B}
+	dojar bin/lib/javacc.jar
+
+	for prog in javacc jjdoc jjtree
+	do
+		java_wrapper ${prog} javacc.jar ${prog}
+	done
+}
